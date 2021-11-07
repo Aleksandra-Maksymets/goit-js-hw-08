@@ -1,11 +1,10 @@
-// Add imports above this line
-import { galleryItems } from './gallery-items';
-// Change code below this line
-
 // Imports library SimpleLightbox
 import SimpleLightbox from 'simplelightbox';
 // Imports CSS styles from the library SimpleLightbox
 import 'simplelightbox/dist/simple-lightbox.min.css';
+// Add imports above this line
+import { galleryItems } from './gallery-items';
+// Change code below this line
 
 // Gains reference of the container
 const galleryListRef = document.querySelector('.gallery');

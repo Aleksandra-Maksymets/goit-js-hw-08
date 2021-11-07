@@ -41,8 +41,7 @@ function fillFormAfterReload() {
   const savedFormData = JSON.parse(localStorage.getItem(LOKALSTORAGE_KEY));
   console.log(savedFormData);
   if (savedFormData) {
-    inputRef.value = savedFormData.message.email;
-
+    inputRef.value = savedFormData.email;
     textareaRef.value = savedFormData.message;
   }
 }
