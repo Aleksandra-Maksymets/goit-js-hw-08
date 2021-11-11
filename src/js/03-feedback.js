@@ -17,6 +17,8 @@ const formData = {
 formRef.addEventListener('submit', onFormSubmit);
 formRef.addEventListener('input', throttle(onFormInput, 500));
 
+fillFormAfterReload();
+
 // Event Handlers
 function onFormSubmit(evt) {
   evt.preventDefault();
@@ -35,12 +37,13 @@ function onFormInput(evt) {
 }
 
 // Adding saved data from localstorage to the form after a reload of the page
-fillFormAfterReload();
 
 function fillFormAfterReload() {
   const savedFormData = JSON.parse(localStorage.getItem(LOKALSTORAGE_KEY));
-  console.log(savedFormData);
+
   if (savedFormData) {
+    formData['email'] = savedFormData.email;
+    formData['message'] = savedFormData.message;
     inputRef.value = savedFormData.email;
     textareaRef.value = savedFormData.message;
   }
